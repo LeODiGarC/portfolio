@@ -1,21 +1,37 @@
-import { useThemeContext } from "@/hooks/useThemeContext";
-
-const DarkModeToggle = () => {
-  const { theme, setTheme } = useThemeContext();
-
+import { Moon, Sun } from "lucide-react"
+ 
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { useTheme } from "@/hooks/useThemeContext.js"
+ 
+export function DarkModeToggle() {
+  const { setTheme } = useTheme()
+ 
   return (
-    <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className={`px-4 py-2 rounded-lg transition-colors 
-          ${
-            theme === "dark"
-              ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
-              : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-          }
-        `}>
-      {theme === "dark" ? "🌙 Modo Oscuro" : "☀️ Modo Claro"}
-    </button>
-  );
-};
-
-export default DarkModeToggle;
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="icon">
+          <Sun className="scale-150 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+          <Moon className="absolute scale-0 rotate-90 transition-all dark:scale-150 dark:rotate-0" />
+          <span className="sr-only">Toggle theme</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem onClick={() => setTheme("light")}>
+          Light
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("dark")}>
+          Dark
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("system")}>
+          System
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
+}

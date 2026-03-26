@@ -6,14 +6,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme {
-  --font-code: "Source Code Pro", sans-serif; 
-}
-
-body {
-  @apply font-code;
-}
-
 @theme inline {
   --font-heading: var(--font-mono);
   --font-mono: 'JetBrains Mono Variable', monospace;
