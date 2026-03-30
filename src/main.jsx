@@ -4,11 +4,13 @@ import "@/index.css";
 import { ThemeProvider } from "@/context/Theme/ThemeProvider";
 import App from "@/App.jsx";
 import { Navbar } from "@/components/Navbar.jsx";
+import { MobileNavbar } from "./components/MobileNavbar";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Navbar />
+      <MobileNavbar />
       <App />
     </ThemeProvider>
   </StrictMode>,

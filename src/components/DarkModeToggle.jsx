@@ -13,7 +13,7 @@ export function DarkModeToggle() {
   const { setTheme } = useTheme()
  
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
           <Sun className="scale-150 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
@@ -21,7 +21,7 @@ export function DarkModeToggle() {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="end" className="bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 mt-3">
         <DropdownMenuItem onClick={() => setTheme("light")}>
           Light
         </DropdownMenuItem>

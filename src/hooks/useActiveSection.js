@@ -4,27 +4,25 @@ export function useActiveSection(sectionIds) {
   const [active, setActive] = useState(sectionIds[0]);
 
   useEffect(() => {
-    const observers = [];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.6 } // 60% visible para activarse
+    );
 
     sectionIds.forEach((id) => {
       const element = document.getElementById(id);
-      if (!element) return;
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setActive(id);
-          }
-        },
-        { threshold: 0.6 } // 60% visible para activarse
-      );
-
-      observer.observe(element);
-      observers.push(observer);
+      if (element) observer.observe(element);
     });
 
-    return () => observers.forEach((obs) => obs.disconnect());
+    return () => observer.disconnect();
   }, [sectionIds]);
 
-  return active;
+  // 🔑 ahora devolvemos también setActive
+  return { active, setActive };
 }
