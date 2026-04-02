@@ -60,29 +60,68 @@ function App() {
           <p className="text-lg md:text-xl lg:text-2xl">
             Soy graduado de <strong>Ingeniería en Ciencias Informáticas</strong>
             y actualmente ejerciendo como
-            <strong>Desarrollador de Software FullStack</strong>.
+            <strong> Desarrollador de Software FullStack</strong>.
           </p>
           <p className="text-md md:text-xl lg:text-2xl">
             Soy un desarrollador <strong>altamente motivado</strong> y orientado
             a los detalles,
-            <strong>comprometido</strong> con estar al tanto de las últimas
+            <strong> comprometido</strong> con estar al tanto de las últimas
             tendencias y mejores prácticas de la industria. Busco constantemente
             nuevos desafíos y oportunidades para
-            <strong>expandir mis habilidades</strong>.
+            <strong> expandir mis habilidades</strong>.
           </p>
         </div>
         <div className="w-50 md:w-auto order-first md:order-last rounded-full overflow-hidden shadow-2xl">
           <img src={Profile} alt="Avatar" />
         </div>
       </Section>
-      <Section id="stack">
-        <h1>Stack</h1>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic
-          excepturi explicabo quibusdam possimus, similique saepe doloremque
-          nemo assumenda optio laborum, deserunt ullam consectetur facilis? Ut
-          exercitationem voluptatum nam perferendis dolore?
-        </p>
+      <Section id="stack" className="justify-start">
+          <div className="flex flex-col gap-8 md:ml-5 lg:ml-10 xl:ml-25 2xl:ml-50">
+            <h2 className="capitalize text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+              Tecnologías que domino
+            </h2>
+            <div className="flex flex-col items-center text-center justify-start p-8 md:flex-row max-w-fit gap-8 rounded-2xl bg-background/60">
+              <h3 className="text-2xl">Frontend</h3>
+              <div className="flex flex-wrap gap-4 items-center justify-start bg-background/20 rounded-2xl">
+                <div className="flex flex-col gap-2 items-center p-5">
+                  <svg className="w-15 h-15">
+                    <use href="/sprites.svg#icon-html" />
+                  </svg>
+                  <p>HTML</p>
+                </div>
+                <div className="flex flex-col gap-2 items-center p-5">
+                  <svg className="w-15 h-15">
+                    <use href="/sprites.svg#icon-css" />
+                  </svg>
+                  <p>CSS</p>
+                </div>
+                <div className="flex flex-col gap-2 items-center p-5">
+                  <svg className="w-15 h-15">
+                    <use href="/sprites.svg#icon-javascript" />
+                  </svg>
+                  <p>JavaScript</p>
+                </div>
+                <div className="flex flex-col gap-2 items-center p-5">
+                  <svg className="w-15 h-15">
+                    <use href="/sprites.svg#icon-typescript" />
+                  </svg>
+                  <p>TypeScript</p>
+                </div>
+                <div className="flex flex-col gap-2 items-center p-5">
+                  <svg className="w-15 h-15">
+                    <use href="/sprites.svg#icon-react" />
+                  </svg>
+                  <p>React</p>
+                </div>
+                <div className="flex flex-col gap-2 items-center p-5">
+                  <svg className="w-15 h-15">
+                    <use href="/sprites.svg#icon-tailwind" />
+                  </svg>
+                  <p>TailwindCSS</p>
+                </div>
+              </div>
+            </div>
+          </div>
       </Section>
       <Section id="projects" reverseBG>
         <h1>Projects</h1>

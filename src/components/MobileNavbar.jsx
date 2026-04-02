@@ -30,7 +30,7 @@ export function MobileNavbar() {
 
   return (
     <nav className="fixed top-0 left-0 z-50 w-full md:hidden">
-      <div className="mx-3 mt-3 flex items-center justify-between px-5 py-3 rounded-2xl border bg-background/60 backdrop-blur-xl shadow-sm">
+      <div className="mx-3 mt-3 flex items-center justify-between px-5 py-3 rounded-2xl border-b bg-background/60 backdrop-blur-xl shadow-sm">
         <span className="font-semibold text-lg tracking-tight">
           Leonardo<span className="text-primary">.dev</span>
         </span>
