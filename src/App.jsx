@@ -1,5 +1,9 @@
-import Section from "./components/Section";
-import Profile from "@/assets/Profile.jpeg";
+import Section from "@/components/Section";
+import StackCard from "@/components/StackCard";
+import Stack from "@/components/Stack";
+import ProjectCard from "./components/ProjectCard";
+import ProjectIcons from "./components/ProjectIcons";
+import { Link } from "lucide-react";
 
 function App() {
   return (
@@ -19,31 +23,31 @@ function App() {
             Enfocado en crear soluciones eficientes, seguras y fáciles de
             mantener.
           </p>
-          <div className="flex justify-center md:justify-start items-center gap-7">
-            <a href="" target="_blank">
-              <svg className="w-10 h-10">
-                <use href="/sprites.svg#icon-facebook" />
-              </svg>
-            </a>
-            <a href="" target="_blank">
-              <svg className="w-10 h-10">
-                <use href="/sprites.svg#icon-x" />
-              </svg>
-            </a>
-            <a href="" target="_blank">
-              <svg className="w-10 h-10">
-                <use href="/sprites.svg#icon-instagram" />
-              </svg>
-            </a>
-            <a href="" target="_blank">
-              <svg className="w-10 h-10">
-                <use href="/sprites.svg#icon-linkedin" />
-              </svg>
-            </a>
-            <a href="mailto:leonardodg2000@gmail.com" target="_blank">
-              <svg className="w-10 h-10">
-                <use href="/sprites.svg#icon-gmail" />
-              </svg>
+          <div className="flex flex-wrap justify-center md:justify-start items-center gap-15">
+            <div className="flex flex-wrap justify-center md:justify-start items-center gap-7">
+              <a href="https://github.com/LeODiGarC" target="_blank">
+                <svg className="w-10 h-10">
+                  <use href="/sprites.svg#icon-github" />
+                </svg>
+              </a>
+              <a href="" target="_blank">
+                <svg className="w-10 h-10">
+                  <use href="/sprites.svg#icon-linkedin" />
+                </svg>
+              </a>
+              <a href="mailto:leonardodg2000@gmail.com" target="_blank">
+                <svg className="w-10 h-10">
+                  <use href="/sprites.svg#icon-gmail" />
+                </svg>
+              </a>
+            </div>
+            <a
+              href="/CV-Leonardo.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-4 items-center px-8 py-3 bg-background/60 rounded-xl hover:bg-background/80 transition-all">
+              <p className="font-bold">Ver CV</p>
+              <Link className="size-4" />
             </a>
           </div>
         </div>
@@ -53,7 +57,7 @@ function App() {
         </svg>
       </Section>
       <Section id="about" reverseBG>
-        <div className="flex flex-col gap-10 w-full md:w-1/2">
+        <div className="flex flex-col gap-10 w-full md:1/3 lg:w-1/2">
           <h1 className="capitalize text-4xl md:text-5xl lg:text-6xl font-bold">
             Sobre mí
           </h1>
@@ -71,65 +75,64 @@ function App() {
             <strong> expandir mis habilidades</strong>.
           </p>
         </div>
-        <div className="w-50 md:w-auto order-first md:order-last rounded-full overflow-hidden shadow-2xl">
-          <img src={Profile} alt="Avatar" />
+        <img
+          src="/Profile.jpeg"
+          alt="Avatar"
+          title="Profile"
+          description="Foto de perfil de Leonardo Díaz"
+          className="w-80 md:w-120 order-first md:order-last rounded-full overflow-hidden shadow-2xl"
+        />
+      </Section>
+      <Section id="stack">
+        <div className="flex flex-col gap-8 w-full xl:px-25">
+          <h2 className="capitalize text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+            Tecnologías que domino
+          </h2>
+          <div className="flex flex-col max-w-fit rounded-2xl bg-background/60">
+            <StackCard name="Frontend">
+              <Stack name="HTML" icon="html" />
+              <Stack name="CSS" icon="css" />
+              <Stack name="JavaScript" icon="javascript" />
+              <Stack name="TypeScript" icon="typescript" />
+              <Stack name="React" icon="react" />
+              <Stack name="TailwindCSS" icon="tailwind" />
+            </StackCard>
+            <StackCard name="Backend">
+              <Stack name="NodeJS" icon="nodejs" />
+              <Stack name="Express" icon="express" />
+              <Stack name="Prisma" icon="prisma" />
+              <Stack name="MongoDB" icon="mongodb" />
+              <Stack name="PostgreSQL" icon="postgresql" />
+              <Stack name="MySQL" icon="mysql" />
+            </StackCard>
+            <StackCard name="Complementos">
+              <Stack name="NextJS" icon="nextjs" />
+              <Stack name="Figma" icon="figma" />
+              <Stack name="Postman" icon="postman" />
+              <Stack name="Docker" icon="docker" />
+              <Stack name="Git" icon="git" />
+              <Stack name="AWS (en proceso)" icon="aws" />
+            </StackCard>
+          </div>
         </div>
       </Section>
-      <Section id="stack" className="justify-start">
-          <div className="flex flex-col gap-8 md:ml-5 lg:ml-10 xl:ml-25 2xl:ml-50">
-            <h2 className="capitalize text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
-              Tecnologías que domino
-            </h2>
-            <div className="flex flex-col items-center text-center justify-start p-8 md:flex-row max-w-fit gap-8 rounded-2xl bg-background/60">
-              <h3 className="text-2xl">Frontend</h3>
-              <div className="flex flex-wrap gap-4 items-center justify-start bg-background/20 rounded-2xl">
-                <div className="flex flex-col gap-2 items-center p-5">
-                  <svg className="w-15 h-15">
-                    <use href="/sprites.svg#icon-html" />
-                  </svg>
-                  <p>HTML</p>
-                </div>
-                <div className="flex flex-col gap-2 items-center p-5">
-                  <svg className="w-15 h-15">
-                    <use href="/sprites.svg#icon-css" />
-                  </svg>
-                  <p>CSS</p>
-                </div>
-                <div className="flex flex-col gap-2 items-center p-5">
-                  <svg className="w-15 h-15">
-                    <use href="/sprites.svg#icon-javascript" />
-                  </svg>
-                  <p>JavaScript</p>
-                </div>
-                <div className="flex flex-col gap-2 items-center p-5">
-                  <svg className="w-15 h-15">
-                    <use href="/sprites.svg#icon-typescript" />
-                  </svg>
-                  <p>TypeScript</p>
-                </div>
-                <div className="flex flex-col gap-2 items-center p-5">
-                  <svg className="w-15 h-15">
-                    <use href="/sprites.svg#icon-react" />
-                  </svg>
-                  <p>React</p>
-                </div>
-                <div className="flex flex-col gap-2 items-center p-5">
-                  <svg className="w-15 h-15">
-                    <use href="/sprites.svg#icon-tailwind" />
-                  </svg>
-                  <p>TailwindCSS</p>
-                </div>
-              </div>
-            </div>
-          </div>
-      </Section>
       <Section id="projects" reverseBG>
-        <h1>Projects</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure
-          rerum qui corporis velit ratione dignissimos maxime, consectetur iste.
-          Saepe ea, alias ex itaque sit tenetur mollitia vel debitis sunt!
-        </p>
+        <div className="flex flex-col gap-8 w-full xl:px-25">
+          <h2 className="capitalize text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+            Proyectos
+          </h2>
+          <div className="flex flex-col max-w-fit rounded-2xl bg-background/60 p-8">
+            <ProjectCard
+              name="Bloom Essence"
+              img="/bloom-essence.png"
+              title="Bloom Essence"
+              description="Proyecto de e-commerce de perfumes desarrollado con React. Cuenta con una interfaz atractiva y funcional, permitiendo a los usuarios explorar y comprar productos de manera sencilla."
+              github="https://github.com/LeODiGarC/Perfumes-Web"
+              url="https://bloom-essence.vercel.app/">
+              <ProjectIcons icons={["html", "css", "javascript", "react"]} />
+            </ProjectCard>
+          </div>
+        </div>
       </Section>
       <Section id="contact">
         <h1>Contact</h1>
